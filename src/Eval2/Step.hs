@@ -76,12 +76,13 @@ rstepM ez0 = do
     Just ezRedx  -> do
       let (redx, ctx) = ezRedx
           Just redx'  = rstep defs redx
-          ezAfter     = goTop (redx', ctx)
+          ezAfter     = (redx', ctx)      -- fokus pozostaje w miejscu redukcji
+          ezNext      = goTop ezAfter     -- dalsza redukcja zawsze od korzenia
       put st
         { fuel    = fuel - 1
         , history = snoc history ezAfter
         }
-      return (Just ezAfter)
+      return (Just ezNext)
 
 -- | Cała ścieżka redukcji (zaznaczamy każdy stan po redukcji).
 rpathM :: ExprZ -> R ()
