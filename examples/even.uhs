@@ -1,0 +1,11 @@
+even Z = True
+even (S (S x)) = even x
+even x = False
+main = even (S (S (S Z)))
+------------------------------------------------------------
+{-
+{main}
+{even (S (S (S Z)))}
+{even (S Z)}
+{False}
+-}

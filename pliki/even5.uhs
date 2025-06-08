@@ -1,0 +1,87 @@
+add Z n = n
+add (S m) n = S (add m n)
+and True True = True
+and False y = False
+and True y = False
+even Z = True
+even (S (S x)) = even x
+even x = False
+main = and (and (odd (mul three three)) (even (add three three))) (odd (mul one two))
+mul m Z = Z
+mul m (S n) = add (mul m n) m
+not True = False
+not False = True
+odd n = not (even n)
+one = S Z
+three = S two
+two = S one
+------------------------------------------------------------
+{-
+{main}
+{and (and (odd (mul three three)) (even (add three three))) (odd (mul one two))}
+and (and {not (even (mul three three))} (even (add three three))) (odd (mul one two))
+and (and (not (even (mul three {S two}))) (even (add three three))) (odd (mul one two))
+and (and (not (even {add (mul three two) three})) (even (add three three))) (odd (mul one two))
+and (and (not (even (add (mul three {S one}) three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add {add (mul three one) three} three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add (add (mul three {S Z}) three) three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add (add {add (mul three Z) three} three) three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add (add (add {Z} three) three) three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add (add {three} three) three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add (add {S two} three) three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add {S (add two three)} three))) (even (add three three))) (odd (mul one two))
+and (and (not (even {S (add (add two three) three)})) (even (add three three))) (odd (mul one two))
+and (and (not (even (S (add (add {S one} three) three)))) (even (add three three))) (odd (mul one two))
+and (and (not (even (S (add {S (add one three)} three)))) (even (add three three))) (odd (mul one two))
+and (and (not (even (S {S (add (add one three) three)}))) (even (add three three))) (odd (mul one two))
+and (and (not {even (add (add one three) three)}) (even (add three three))) (odd (mul one two))
+and (and (not (even (add (add {S Z} three) three))) (even (add three three))) (odd (mul one two))
+and (and (not (even (add {S (add Z three)} three))) (even (add three three))) (odd (mul one two))
+and (and (not (even {S (add (add Z three) three)})) (even (add three three))) (odd (mul one two))
+and (and (not (even (S (add {three} three)))) (even (add three three))) (odd (mul one two))
+and (and (not (even (S (add {S two} three)))) (even (add three three))) (odd (mul one two))
+and (and (not (even (S {S (add two three)}))) (even (add three three))) (odd (mul one two))
+and (and (not {even (add two three)}) (even (add three three))) (odd (mul one two))
+and (and (not (even (add {S one} three))) (even (add three three))) (odd (mul one two))
+and (and (not (even {S (add one three)})) (even (add three three))) (odd (mul one two))
+and (and (not (even (S (add {S Z} three)))) (even (add three three))) (odd (mul one two))
+and (and (not (even (S {S (add Z three)}))) (even (add three three))) (odd (mul one two))
+and (and (not {even (add Z three)}) (even (add three three))) (odd (mul one two))
+and (and (not (even {three})) (even (add three three))) (odd (mul one two))
+and (and (not (even {S two})) (even (add three three))) (odd (mul one two))
+and (and (not (even (S {S one}))) (even (add three three))) (odd (mul one two))
+and (and (not {even one}) (even (add three three))) (odd (mul one two))
+and (and (not (even {S Z})) (even (add three three))) (odd (mul one two))
+and (and (not {False}) (even (add three three))) (odd (mul one two))
+and (and {True} (even (add three three))) (odd (mul one two))
+and (and True (even (add {S two} three))) (odd (mul one two))
+and (and True (even {S (add two three)})) (odd (mul one two))
+and (and True (even (S (add {S one} three)))) (odd (mul one two))
+and (and True (even (S {S (add one three)}))) (odd (mul one two))
+and (and True {even (add one three)}) (odd (mul one two))
+and (and True (even (add {S Z} three))) (odd (mul one two))
+and (and True (even {S (add Z three)})) (odd (mul one two))
+and (and True (even (S {three}))) (odd (mul one two))
+and (and True (even (S {S two}))) (odd (mul one two))
+and (and True {even two}) (odd (mul one two))
+and (and True (even {S one})) (odd (mul one two))
+and (and True (even (S {S Z}))) (odd (mul one two))
+and (and True {even Z}) (odd (mul one two))
+and (and True {True}) (odd (mul one two))
+and {True} (odd (mul one two))
+and True {not (even (mul one two))}
+and True (not (even (mul one {S one})))
+and True (not (even {add (mul one one) one}))
+and True (not (even (add (mul one {S Z}) one)))
+and True (not (even (add {add (mul one Z) one} one)))
+and True (not (even (add (add {Z} one) one)))
+and True (not (even (add {one} one)))
+and True (not (even (add {S Z} one)))
+and True (not (even {S (add Z one)}))
+and True (not (even (S {one})))
+and True (not (even (S {S Z})))
+and True (not {even Z})
+and True (not {True})
+and True {False}
+{False}
+-}

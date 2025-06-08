@@ -1,0 +1,12 @@
+add Z n = n
+add (S m) n = S (add m n)
+main = add one Z
+one = S Z
+------------------------------------------------------------
+{-
+{main}
+{add one Z}
+add {S Z} Z
+{S (add Z Z)}
+S {Z}
+-}

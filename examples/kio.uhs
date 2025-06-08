@@ -1,0 +1,15 @@
+i = s k k
+k x y = x
+main = k i omega 0
+om x = x x
+omega = om om
+s x y z = x z (y z)
+------------------------------------------------------------
+{-
+{main}
+{k i omega 0}
+{i} 0
+{s k k} 0
+{k 0 (k 0)}
+{0}
+-}

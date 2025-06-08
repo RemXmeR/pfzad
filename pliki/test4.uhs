@@ -1,0 +1,32 @@
+K x y = x
+add = b s (b b)
+b x y z = x (y z)
+i x = x
+kio = K i omega
+main = add twoB threeB x z
+omega = s i i (s i i)
+s x y z = x z (y z)
+test1 = s K K X
+test3 = threeB X Z
+threeB = s b (s b i)
+twoB = s b i
+------------------------------------------------------------
+{-
+{main}
+{add twoB threeB x z}
+{b s (b b)} twoB threeB x z
+{s (b b twoB)} threeB x z
+{b b twoB x (threeB x)} z
+{b (twoB x)} (threeB x) z
+{twoB x (threeB x z)}
+{s b i} x (threeB x z)
+{b x (i x)} (threeB x z)
+{x (i x (threeB x z))}
+x ({x} (threeB x z))
+x (x ({s b (s b i)} x z))
+x (x ({b x (s b i x)} z))
+x (x {x (s b i x z)})
+x (x (x ({b x (i x)} z)))
+x (x (x {x (i x z)}))
+x (x (x (x ({x} z))))
+-}

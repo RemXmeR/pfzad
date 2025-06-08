@@ -1,0 +1,15 @@
+equal Z Z = True
+equal (S x) (S y) = equal x y
+equal x y = False
+main = equal one one
+one = S Z
+two = S one
+------------------------------------------------------------
+{-
+{main}
+{equal one one}
+equal {S Z} one
+equal (S Z) {S Z}
+{equal Z Z}
+{True}
+-}

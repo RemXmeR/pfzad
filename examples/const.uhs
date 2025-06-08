@@ -1,0 +1,8 @@
+const x y = x
+main = const foo bar
+------------------------------------------------------------
+{-
+{main}
+{const foo bar}
+{foo}
+-}

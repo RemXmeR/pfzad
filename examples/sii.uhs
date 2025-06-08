@@ -1,0 +1,11 @@
+i x = x
+main = s i i Foo
+s x y z = x z (y z)
+------------------------------------------------------------
+{-
+{main}
+{s i i Foo}
+{i Foo (i Foo)}
+{Foo} (i Foo)
+Foo {Foo}
+-}

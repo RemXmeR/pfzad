@@ -1,0 +1,14 @@
+add Z n = n
+add (S m) n = S (add m n)
+main = add two two
+two = S (S Z)
+------------------------------------------------------------
+{-
+{main}
+{add two two}
+add {S (S Z)} two
+{S (add (S Z) two)}
+S {S (add Z two)}
+S (S {two})
+S (S {S (S Z)})
+-}

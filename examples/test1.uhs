@@ -1,0 +1,26 @@
+add = b s (b b)
+b x1 x2 x3 = x1 (x2 x3)
+i x5 = x5
+k x8 x9 = x8
+kio = k i omega
+main = test3 nothing
+nothing = x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12
+omega = s i i (s i i)
+s x1 x2 x3 = x1 x3 (x2 x3)
+test1 = s k k X
+test3 = threeb
+threeb = s b (s b i)
+twob = s b i
+------------------------------------------------------------
+{-
+{main}
+{test3 nothing}
+{threeb} nothing
+{s b (s b i)} nothing
+{b nothing (s b i nothing)}
+b {x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12} (s b i nothing)
+b (x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12) {b nothing (i nothing)}
+b (x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12) (b {x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12} (i nothing))
+b (x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12) (b (x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12) {nothing})
+b (x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12) (b (x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12) {x1 x2 x3 x4 x6 x7 x8 x9 x10 x11 x12})
+-}
